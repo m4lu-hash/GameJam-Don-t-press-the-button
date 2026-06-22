@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://boa0y5ne4rplo"]
+
+[ext_resource type="PackedScene" uid="uid://dp7qcvgcmvebd" path="res://scenes/enemies/base_enemy.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://dohsji6dw8xnl" path="res://scenes/main/main.gd" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://gfcjptk77qr7" path="res://scenes/buttons/base_button.tscn" id="3_k2fmo"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iuonh"]
+vertices = PackedVector2Array(1272.0781, 712.0625, 3, 720.9219, 3, 10, 1277.9219, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7, 0, -7, 731, 1282, 722, 1288, 0)])
+
+[node name="Main" type="Node2D" unique_id=1276616182]
+script = ExtResource("1_k2fmo")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1967988127]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_iuonh")
+
+[node name="BaseButton" parent="." unique_id=115424014 instance=ExtResource("3_k2fmo")]
+position = Vector2(265, 361)
+text = "测速1"
+
+[node name="BaseButton2" parent="." unique_id=1450460267 instance=ExtResource("3_k2fmo")]
+position = Vector2(946, 406)
+text = "测速2"
+
+[node name="BaseButton3" parent="." unique_id=772291618 instance=ExtResource("3_k2fmo")]
+position = Vector2(677, 148)
+text = "测速3"
+
+[node name="BaseEnemy" parent="." unique_id=1293915282 instance=ExtResource("1_hyk8p")]
+position = Vector2(420, 219)
